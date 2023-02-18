@@ -9,7 +9,7 @@ import UIKit
 
 final class LoadViewController: UIViewController {
     
-    private let mainView = LoadView()
+    let mainView = LoadView()
     
     override func loadView() {
         self.view = mainView

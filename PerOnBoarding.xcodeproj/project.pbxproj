@@ -116,6 +116,7 @@
 		2552049729A0AC8C007469B5 /* Presentation */ = {
 			isa = PBXGroup;
 			children = (
+				255204AB29A0C2A1007469B5 /* Utility */,
 				2552049A29A0AD1B007469B5 /* ImageScene */,
 			);
 			path = Presentation;
@@ -125,7 +126,6 @@
 			isa = PBXGroup;
 			children = (
 				2552049829A0AD17007469B5 /* LoadViewController.swift */,
-				2552049C29A0B368007469B5 /* LoadView.swift */,
 			);
 			path = ImageScene;
 			sourceTree = "<group>";
@@ -136,6 +136,22 @@
 				255204A829A0B62B007469B5 /* APIService.swift */,
 			);
 			path = Network;
+			sourceTree = "<group>";
+		};
+		255204AA29A0C28F007469B5 /* Custom */ = {
+			isa = PBXGroup;
+			children = (
+				2552049C29A0B368007469B5 /* LoadView.swift */,
+			);
+			path = Custom;
+			sourceTree = "<group>";
+		};
+		255204AB29A0C2A1007469B5 /* Utility */ = {
+			isa = PBXGroup;
+			children = (
+				255204AA29A0C28F007469B5 /* Custom */,
+			);
+			path = Utility;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
