@@ -9,6 +9,11 @@ import UIKit
 
 final class LoadViewController: UIViewController {
     
+    private let mainView = LoadView()
+    
+    override func loadView() {
+        self.view = mainView
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
