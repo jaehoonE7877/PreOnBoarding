@@ -7,21 +7,22 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		254951BF29A48E3900D2118C /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = 254951BE29A48E3900D2118C /* SnapKit */; };
+		254951C129A4907300D2118C /* LoadView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 254951C029A4907300D2118C /* LoadView.swift */; };
 		2552047E29A0AA64007469B5 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2552047D29A0AA64007469B5 /* AppDelegate.swift */; };
 		2552048029A0AA64007469B5 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2552047F29A0AA64007469B5 /* SceneDelegate.swift */; };
 		2552048729A0AA65007469B5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2552048629A0AA65007469B5 /* Assets.xcassets */; };
 		2552048A29A0AA65007469B5 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2552048829A0AA65007469B5 /* LaunchScreen.storyboard */; };
 		2552049229A0AAB6007469B5 /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = 2552049129A0AAB6007469B5 /* .gitignore */; };
 		2552049929A0AD17007469B5 /* LoadViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2552049829A0AD17007469B5 /* LoadViewController.swift */; };
-		2552049D29A0B368007469B5 /* LoadView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2552049C29A0B368007469B5 /* LoadView.swift */; };
+		2552049D29A0B368007469B5 /* LoadTableViewCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2552049C29A0B368007469B5 /* LoadTableViewCellView.swift */; };
 		2552049F29A0B4D2007469B5 /* APIKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2552049E29A0B4D2007469B5 /* APIKey.swift */; };
-		255204A229A0B5A0007469B5 /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = 255204A129A0B5A0007469B5 /* SnapKit */; };
-		255204A429A0B5A0007469B5 /* SnapKit-Dynamic in Frameworks */ = {isa = PBXBuildFile; productRef = 255204A329A0B5A0007469B5 /* SnapKit-Dynamic */; };
 		255204A729A0B5B0007469B5 /* Then in Frameworks */ = {isa = PBXBuildFile; productRef = 255204A629A0B5B0007469B5 /* Then */; };
 		255204A929A0B62B007469B5 /* APIService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 255204A829A0B62B007469B5 /* APIService.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		254951C029A4907300D2118C /* LoadView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadView.swift; sourceTree = "<group>"; };
 		2552047A29A0AA64007469B5 /* PerOnBoarding.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PerOnBoarding.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2552047D29A0AA64007469B5 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		2552047F29A0AA64007469B5 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -30,7 +31,7 @@
 		2552048B29A0AA65007469B5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		2552049129A0AAB6007469B5 /* .gitignore */ = {isa = PBXFileReference; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
 		2552049829A0AD17007469B5 /* LoadViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadViewController.swift; sourceTree = "<group>"; };
-		2552049C29A0B368007469B5 /* LoadView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadView.swift; sourceTree = "<group>"; };
+		2552049C29A0B368007469B5 /* LoadTableViewCellView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadTableViewCellView.swift; sourceTree = "<group>"; };
 		2552049E29A0B4D2007469B5 /* APIKey.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIKey.swift; sourceTree = "<group>"; };
 		255204A829A0B62B007469B5 /* APIService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIService.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -40,9 +41,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				255204A229A0B5A0007469B5 /* SnapKit in Frameworks */,
 				255204A729A0B5B0007469B5 /* Then in Frameworks */,
-				255204A429A0B5A0007469B5 /* SnapKit-Dynamic in Frameworks */,
+				254951BF29A48E3900D2118C /* SnapKit in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -126,6 +126,7 @@
 			isa = PBXGroup;
 			children = (
 				2552049829A0AD17007469B5 /* LoadViewController.swift */,
+				254951C029A4907300D2118C /* LoadView.swift */,
 			);
 			path = ImageScene;
 			sourceTree = "<group>";
@@ -141,7 +142,7 @@
 		255204AA29A0C28F007469B5 /* Custom */ = {
 			isa = PBXGroup;
 			children = (
-				2552049C29A0B368007469B5 /* LoadView.swift */,
+				2552049C29A0B368007469B5 /* LoadTableViewCellView.swift */,
 			);
 			path = Custom;
 			sourceTree = "<group>";
@@ -171,9 +172,8 @@
 			);
 			name = PerOnBoarding;
 			packageProductDependencies = (
-				255204A129A0B5A0007469B5 /* SnapKit */,
-				255204A329A0B5A0007469B5 /* SnapKit-Dynamic */,
 				255204A629A0B5B0007469B5 /* Then */,
+				254951BE29A48E3900D2118C /* SnapKit */,
 			);
 			productName = PerOnBoarding;
 			productReference = 2552047A29A0AA64007469B5 /* PerOnBoarding.app */;
@@ -204,8 +204,8 @@
 			);
 			mainGroup = 2552047129A0AA64007469B5;
 			packageReferences = (
-				255204A029A0B5A0007469B5 /* XCRemoteSwiftPackageReference "SnapKit" */,
 				255204A529A0B5B0007469B5 /* XCRemoteSwiftPackageReference "Then" */,
+				254951BD29A48E3900D2118C /* XCRemoteSwiftPackageReference "SnapKit" */,
 			);
 			productRefGroup = 2552047B29A0AA64007469B5 /* Products */;
 			projectDirPath = "";
@@ -235,10 +235,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				255204A929A0B62B007469B5 /* APIService.swift in Sources */,
-				2552049D29A0B368007469B5 /* LoadView.swift in Sources */,
+				2552049D29A0B368007469B5 /* LoadTableViewCellView.swift in Sources */,
 				2552047E29A0AA64007469B5 /* AppDelegate.swift in Sources */,
 				2552049929A0AD17007469B5 /* LoadViewController.swift in Sources */,
 				2552048029A0AA64007469B5 /* SceneDelegate.swift in Sources */,
+				254951C129A4907300D2118C /* LoadView.swift in Sources */,
 				2552049F29A0B4D2007469B5 /* APIKey.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -457,7 +458,7 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
-		255204A029A0B5A0007469B5 /* XCRemoteSwiftPackageReference "SnapKit" */ = {
+		254951BD29A48E3900D2118C /* XCRemoteSwiftPackageReference "SnapKit" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/SnapKit/SnapKit.git";
 			requirement = {
@@ -476,15 +477,10 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		255204A129A0B5A0007469B5 /* SnapKit */ = {
+		254951BE29A48E3900D2118C /* SnapKit */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = 255204A029A0B5A0007469B5 /* XCRemoteSwiftPackageReference "SnapKit" */;
+			package = 254951BD29A48E3900D2118C /* XCRemoteSwiftPackageReference "SnapKit" */;
 			productName = SnapKit;
-		};
-		255204A329A0B5A0007469B5 /* SnapKit-Dynamic */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 255204A029A0B5A0007469B5 /* XCRemoteSwiftPackageReference "SnapKit" */;
-			productName = "SnapKit-Dynamic";
 		};
 		255204A629A0B5B0007469B5 /* Then */ = {
 			isa = XCSwiftPackageProductDependency;
