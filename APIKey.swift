@@ -8,10 +8,10 @@
 import Foundation
 
 struct APIKey {
-    static let key = "1HEE9JxP7vMCzirRfQjC44GhgdtLAJ1Z0z0zeLf_rT4"
+    static let authorization = "Client-ID 1HEE9JxP7vMCzirRfQjC44GhgdtLAJ1Z0z0zeLf_rT4"
     static let secretKey = "SDN1Ino94S0UbvfArG3bOZF4zhqo5aYEEuValPl2EvU"
 }
 
 extension URL {
-    static let baseURL = "https://api.unsplash.com/search/photos"
+    static let baseURL = "https://api.unsplash.com"
 }
