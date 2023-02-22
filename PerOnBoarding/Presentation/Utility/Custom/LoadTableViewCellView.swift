@@ -11,13 +11,12 @@ import SnapKit
 import Then
 
 final class LoadTableViewCell: UITableViewCell {
-
+    
     static let reuseIdentifier: String = "LoadTableViewCell"
     
     let mainImageView = UIImageView().then {
         $0.tintColor = .systemBlue
-        $0.contentMode = .scaleAspectFit
-        $0.image = UIImage(systemName: "photo")
+        $0.contentMode = .scaleToFill
     }
     
     let progressBar = UIProgressView().then {
@@ -43,7 +42,7 @@ final class LoadTableViewCell: UITableViewCell {
     }
     
     private func configure() {
-        [mainImageView, progressBar, loadButton].forEach { self.addSubview($0) }
+        [mainImageView, progressBar, loadButton].forEach { contentView.addSubview($0) }
     }
     
     private func setConstraints() {
@@ -68,7 +67,4 @@ final class LoadTableViewCell: UITableViewCell {
         
     }
     
-    func setData() {
-        
-    }
 }

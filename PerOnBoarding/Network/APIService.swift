@@ -20,16 +20,14 @@ final class APIService {
     
     private let session = URLSession.shared
     
-    func request(completion: @escaping (Result<String, APIError>) -> Void) {
+    func request(completion: @escaping (Result<RandomPhoto?, APIError>) -> Void) {
         
         guard let url = URL(string: Endpoint.random.getURL) else { return }
         
         var component = URLComponents()
         component.queryItems = Endpoint.random.parameter
-        
-        let body = component.query?.data(using: .utf8)
-        
-        let request = createHttpRequest(of: url, httpMethod: HttpMethod.get)
+       
+        let request = createHttpRequest(of: url, httpMethod: HttpMethod.get, with: Endpoint.random.header, with: nil)
         
         session.dataTask(with: request) { data, response, error in
             
@@ -43,12 +41,17 @@ final class APIService {
                 return
             }
             
-            guard data != nil else {
+            guard let data = data else {
                 completion(.failure(.noData))
                 return
             }
             
-            completion(.success("ok"))
+            do {
+                let result = try JSONDecoder().decode(RandomPhoto.self, from: data)
+                completion(.success(result))
+            } catch {
+                completion(.failure(.invalidData))
+            }
             
         }.resume()
     }

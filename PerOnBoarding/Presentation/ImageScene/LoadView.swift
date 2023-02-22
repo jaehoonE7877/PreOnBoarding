@@ -13,11 +13,11 @@ import Then
 final class LoadView: UIView {
     
     lazy var tableView = UITableView(frame: .zero, style: .plain).then {
+        $0.isUserInteractionEnabled = true
         $0.rowHeight = 100
         $0.allowsSelection = false
         $0.backgroundColor = .systemBackground
         $0.showsVerticalScrollIndicator = false
-        //$0.contentInset = .init(top: 0, left: 16, bottom: 0, right: 16)
         $0.register(LoadTableViewCell.self, forCellReuseIdentifier: LoadTableViewCell.reuseIdentifier)
         $0.isScrollEnabled = false
         $0.separatorStyle = .none

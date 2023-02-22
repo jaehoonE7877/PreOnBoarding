@@ -16,7 +16,7 @@ extension Endpoint {
     var getURL: String {
         switch self {
         case .random:
-            return "\(URL.baseURL)/photos/random?query="
+            return "\(URL.baseURL)/photos/random"
         }
     }
     

@@ -11,6 +11,8 @@
 		254951C129A4907300D2118C /* LoadView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 254951C029A4907300D2118C /* LoadView.swift */; };
 		254951C329A49B3900D2118C /* EndPoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 254951C229A49B3900D2118C /* EndPoint.swift */; };
 		254951C629A4A06700D2118C /* APIError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 254951C529A4A06700D2118C /* APIError.swift */; };
+		254951CA29A5E83D00D2118C /* RandomPhoto.swift in Sources */ = {isa = PBXBuildFile; fileRef = 254951C929A5E83D00D2118C /* RandomPhoto.swift */; };
+		254951CD29A5EA3100D2118C /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = 254951CC29A5EA3100D2118C /* Kingfisher */; };
 		2552047E29A0AA64007469B5 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2552047D29A0AA64007469B5 /* AppDelegate.swift */; };
 		2552048029A0AA64007469B5 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2552047F29A0AA64007469B5 /* SceneDelegate.swift */; };
 		2552048729A0AA65007469B5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2552048629A0AA65007469B5 /* Assets.xcassets */; };
@@ -27,6 +29,7 @@
 		254951C029A4907300D2118C /* LoadView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadView.swift; sourceTree = "<group>"; };
 		254951C229A49B3900D2118C /* EndPoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EndPoint.swift; sourceTree = "<group>"; };
 		254951C529A4A06700D2118C /* APIError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIError.swift; sourceTree = "<group>"; };
+		254951C929A5E83D00D2118C /* RandomPhoto.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RandomPhoto.swift; sourceTree = "<group>"; };
 		2552047A29A0AA64007469B5 /* PerOnBoarding.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PerOnBoarding.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2552047D29A0AA64007469B5 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		2552047F29A0AA64007469B5 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -45,6 +48,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				254951CD29A5EA3100D2118C /* Kingfisher in Frameworks */,
 				255204A729A0B5B0007469B5 /* Then in Frameworks */,
 				254951BF29A48E3900D2118C /* SnapKit in Frameworks */,
 			);
@@ -59,6 +63,22 @@
 				254951C529A4A06700D2118C /* APIError.swift */,
 			);
 			path = Error;
+			sourceTree = "<group>";
+		};
+		254951C729A5E82500D2118C /* Domain */ = {
+			isa = PBXGroup;
+			children = (
+				254951C829A5E82A00D2118C /* Model */,
+			);
+			path = Domain;
+			sourceTree = "<group>";
+		};
+		254951C829A5E82A00D2118C /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				254951C929A5E83D00D2118C /* RandomPhoto.swift */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 		2552047129A0AA64007469B5 = {
@@ -82,6 +102,7 @@
 		2552047C29A0AA64007469B5 /* PerOnBoarding */ = {
 			isa = PBXGroup;
 			children = (
+				254951C729A5E82500D2118C /* Domain */,
 				2552049B29A0B276007469B5 /* Network */,
 				2552049729A0AC8C007469B5 /* Presentation */,
 				2552049629A0AB45007469B5 /* Application */,
@@ -137,8 +158,8 @@
 		2552049A29A0AD1B007469B5 /* ImageScene */ = {
 			isa = PBXGroup;
 			children = (
-				2552049829A0AD17007469B5 /* LoadViewController.swift */,
 				254951C029A4907300D2118C /* LoadView.swift */,
+				2552049829A0AD17007469B5 /* LoadViewController.swift */,
 			);
 			path = ImageScene;
 			sourceTree = "<group>";
@@ -188,6 +209,7 @@
 			packageProductDependencies = (
 				255204A629A0B5B0007469B5 /* Then */,
 				254951BE29A48E3900D2118C /* SnapKit */,
+				254951CC29A5EA3100D2118C /* Kingfisher */,
 			);
 			productName = PerOnBoarding;
 			productReference = 2552047A29A0AA64007469B5 /* PerOnBoarding.app */;
@@ -220,6 +242,7 @@
 			packageReferences = (
 				255204A529A0B5B0007469B5 /* XCRemoteSwiftPackageReference "Then" */,
 				254951BD29A48E3900D2118C /* XCRemoteSwiftPackageReference "SnapKit" */,
+				254951CB29A5EA3100D2118C /* XCRemoteSwiftPackageReference "Kingfisher" */,
 			);
 			productRefGroup = 2552047B29A0AA64007469B5 /* Products */;
 			projectDirPath = "";
@@ -251,6 +274,7 @@
 				255204A929A0B62B007469B5 /* APIService.swift in Sources */,
 				2552049D29A0B368007469B5 /* LoadTableViewCellView.swift in Sources */,
 				254951C329A49B3900D2118C /* EndPoint.swift in Sources */,
+				254951CA29A5E83D00D2118C /* RandomPhoto.swift in Sources */,
 				2552047E29A0AA64007469B5 /* AppDelegate.swift in Sources */,
 				254951C629A4A06700D2118C /* APIError.swift in Sources */,
 				2552049929A0AD17007469B5 /* LoadViewController.swift in Sources */,
@@ -482,6 +506,14 @@
 				minimumVersion = 5.0.0;
 			};
 		};
+		254951CB29A5EA3100D2118C /* XCRemoteSwiftPackageReference "Kingfisher" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/onevcat/Kingfisher.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 7.0.0;
+			};
+		};
 		255204A529A0B5B0007469B5 /* XCRemoteSwiftPackageReference "Then" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/devxoul/Then.git";
@@ -497,6 +529,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 254951BD29A48E3900D2118C /* XCRemoteSwiftPackageReference "SnapKit" */;
 			productName = SnapKit;
+		};
+		254951CC29A5EA3100D2118C /* Kingfisher */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 254951CB29A5EA3100D2118C /* XCRemoteSwiftPackageReference "Kingfisher" */;
+			productName = Kingfisher;
 		};
 		255204A629A0B5B0007469B5 /* Then */ = {
 			isa = XCSwiftPackageProductDependency;
