@@ -15,7 +15,9 @@ final class LoadViewController: UIViewController {
     
     private let apiService = APIService.shared
         
-    var imageArray: [UIImage?] = Array(repeating: nil, count: 5) {
+    private var unload: Bool = false
+    
+    var imageArray: [UIImage?] = Array(repeating: UIImage(systemName: "photo"), count: 5) {
         didSet {
             DispatchQueue.main.async {
                 self.mainView.tableView.reloadData()
@@ -39,7 +41,10 @@ final class LoadViewController: UIViewController {
     }
     
     @objc private func loadAllButtonTapped(){
-        print("load All Button")
+        Task {
+            await imageArray = try self.fetchAllImage()
+            
+        }
     }
 }
 
@@ -64,19 +69,35 @@ extension LoadViewController: UITableViewDelegate, UITableViewDataSource {
     
     @objc private func loadButtonTapped(sender: UIButton) {
         
-        apiService.request { result in
-            switch result {
-            case .success(let result):
-                guard let url = URL(string: result?.urls.thumb ?? "") else { return }
-                let data = try? Data(contentsOf: url)
-                DispatchQueue.main.async {
-                    self.imageArray[sender.tag] = UIImage(data: data!) ?? UIImage(systemName: "photo")
+        if self.unload {
+            imageArray[sender.tag] = UIImage(systemName: "photo")
+        } else {
+            apiService.request { result in
+                switch result {
+                case .success(let result):
+                    guard let url = URL(string: result?.urls.thumb ?? "") else { return }
+                    let data = try? Data(contentsOf: url)
+                    DispatchQueue.main.async {
+                        self.imageArray[sender.tag] = UIImage(data: data!) ?? UIImage(systemName: "photo")
+                    }
+                    
+                case .failure(let error):
+                    print(error.errorDescription ?? "에러입니다.")
                 }
-                
-            case .failure(let error):
-                print(error.errorDescription ?? "에러입니다.")
             }
         }
+        
+        self.unload.toggle()
+    }
+    
+    private func fetchAllImage() async throws -> [UIImage] {
+        var randomImageArray = [UIImage]()
+        
+        for _ in 0..<imageArray.count {
+            randomImageArray.append(try await apiService.fetchPhoto())
+        }
+        
+        return randomImageArray
     }
     
 }

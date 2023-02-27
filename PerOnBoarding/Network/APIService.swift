@@ -5,7 +5,7 @@
 //  Created by Seo Jae Hoon on 2023/02/18.
 //
 
-import Foundation
+import UIKit
 
 enum HttpMethod {
     static let get = "GET"
@@ -35,7 +35,7 @@ final class APIService {
                 completion(.failure(.failedRequest))
                 return
             }
-            
+
             guard let response = response as? HTTPURLResponse, (200 ..< 300) ~= response.statusCode else {
                 completion(.failure(.invalidResponse))
                 return
@@ -74,5 +74,23 @@ final class APIService {
         return request
     }
 
-    
+    func fetchPhoto() async throws -> UIImage {
+        guard let url = URL(string: Endpoint.random.getURL) else {
+            throw APIError.failedRequest
+        }
+        
+        var component = URLComponents()
+        component.queryItems = Endpoint.random.parameter
+       
+        let request = createHttpRequest(of: url, httpMethod: HttpMethod.get, with: Endpoint.random.header, with: nil)
+        
+        let (data, response) = try await session.data(for: request)
+        
+        guard let httpResponse = response as? HTTPURLResponse, (200 ..< 300) ~= httpResponse.statusCode else {
+            throw APIError.invalidResponse
+        }
+        let result = try JSONDecoder().decode(RandomPhoto.self, from: data)
+        let stringURL = URL(string: result.urls.thumb)!
+        return UIImage(data: try Data(contentsOf: stringURL)) ?? UIImage(systemName: "xmark")!
+    }
 }
